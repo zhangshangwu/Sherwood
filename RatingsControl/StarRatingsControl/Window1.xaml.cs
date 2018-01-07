@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace StarRatingsControl
 {
-    /// <summary>
-    /// Interaction logic for Window1.xaml
-    /// </summary>
     public partial class Window1 : Window
     {
         public Window1()
