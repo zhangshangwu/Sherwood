@@ -35,11 +35,8 @@ namespace StarRatingsControl
 
         private void Window2_Loaded(object sender, RoutedEventArgs e)
         {
-            // this.pbwf.Image = System.Drawing.Image.FromFile(@"Resources\videocall.png");
-
             WebCamera wc = new WebCamera();
             wc.StartPreview(this.pbwf);
-
         }
 
         private void btnSetAspectRatio_Click(object sender, RoutedEventArgs e)

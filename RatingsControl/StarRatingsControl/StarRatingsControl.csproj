@@ -101,8 +101,8 @@
     </ApplicationDefinition>
     <Compile Include="FixedAspectWinFormsHost.cs" />
     <Compile Include="WebCam.cs" />
-    <Compile Include="Window2.xaml.cs">
-      <DependentUpon>Window2.xaml</DependentUpon>
+    <Compile Include="Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
     <Page Include="RatingsControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -135,7 +135,7 @@
       <DependentUpon>Window1.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Window2.xaml">
+    <Page Include="Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
