@@ -21,7 +21,6 @@ namespace StarRatingsControl
         static FixedAspectWinFormsHost()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(FixedAspectWinFormsHost), new FrameworkPropertyMetadata(typeof(FixedAspectWinFormsHost)));
-            
         }
 
         public static DependencyProperty AspectRatioDependecyProperty = DependencyProperty.Register("AspectRatio",
@@ -79,7 +78,6 @@ namespace StarRatingsControl
         protected override Size ArrangeOverride(Size finalSize)
         {
             Size newSize = this.GetNewSize(finalSize);
-
             return base.ArrangeOverride(newSize);
         }
 

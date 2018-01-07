@@ -30,10 +30,7 @@ namespace StarRatingsControl
     using System.Diagnostics;
     using System.Runtime.InteropServices;
     using System.Windows.Forms;
-    //using DevExpress.XtraEditors;
-
-
-
+   
     namespace EnrollmentSystem
     {
         public class WebCamera
