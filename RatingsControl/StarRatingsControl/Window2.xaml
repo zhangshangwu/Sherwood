@@ -1,0 +1,61 @@
+﻿<Window x:Class="StarRatingsControl.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StarRatingsControl"
+         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        mc:Ignorable="d"
+        Title="Window2" Height="450" Width="800">
+    <Window.Resources>
+        <ImageBrush x:Key="disableImg" ImageSource="pack://siteoforigin:,,,/Resources/videocall_disable.png"/>
+        <ImageBrush x:Key="enableImg" ImageSource="pack://siteoforigin:,,,/Resources/videocall.png"/>
+        <Style TargetType="Button" BasedOn="{x:Null}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="{StaticResource disableImg}">
+                
+            </Setter>
+            <Style.Triggers>
+               
+                <Trigger Property="IsEnabled" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Background" Value="{StaticResource enableImg}"/>
+                    </Trigger.Setters>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <local:FixedAspectWinFormsHost>
+                <wf:PictureBox x:Name="pbImge"  SizeMode="Zoom" BackColor="Black" ></wf:PictureBox>
+            </local:FixedAspectWinFormsHost>
+            <Button Name="btnVedio" Margin="5" Width="200" IsEnabled="False"/>
+        </StackPanel>
+        <local:FixedAspectWinFormsHost Grid.Row ="1" x:Name="wfh" Background="Red" >
+            <wf:PictureBox x:Name="pbwf"  SizeMode="AutoSize" BackColor="Black" ></wf:PictureBox>
+        </local:FixedAspectWinFormsHost>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBox Text="1.777778" Name="txtRatio" Margin="10"></TextBox>
+            <Button   Name="btnSetAspectRatio" Content="Change Aspect" Margin="10" Click="btnSetAspectRatio_Click" />
+        </StackPanel>
+        <TextBlock Grid.Row="3" Name="tbStatus" Text="ready" />
+    </Grid>
+</Window>
