@@ -10,7 +10,7 @@
     <Window.Resources>
         <ImageBrush x:Key="disableImg" ImageSource="pack://siteoforigin:,,,/Resources/videocall_disable.png"/>
         <ImageBrush x:Key="enableImg" ImageSource="pack://siteoforigin:,,,/Resources/videocall.png"/>
-        <Style TargetType="Button" BasedOn="{x:Null}">
+        <Style TargetType="Button" x:Key="DisableButton">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -47,7 +47,7 @@
             <local:FixedAspectWinFormsHost>
                 <wf:PictureBox x:Name="pbImge"  SizeMode="Zoom" BackColor="Black" ></wf:PictureBox>
             </local:FixedAspectWinFormsHost>
-            <Button Name="btnVedio" Margin="5" Width="200" IsEnabled="False"/>
+            <Button Name="btnVedio" Margin="5" Width="200" IsEnabled="False" Style="{StaticResource DisableButton}"/>
         </StackPanel>
         <local:FixedAspectWinFormsHost Grid.Row ="1" x:Name="wfh" Background="Red" >
             <wf:PictureBox x:Name="pbwf"  SizeMode="AutoSize" BackColor="Black" ></wf:PictureBox>
